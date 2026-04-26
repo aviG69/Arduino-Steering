@@ -1,0 +1,4 @@
+cd Desktop\ArduinoSteering
+
+
+python arduino_to_vjoy.py"
