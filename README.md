@@ -20,3 +20,8 @@ Built for low-latency steering input in racing simulations.
 - **Brake(S)** - 3
 - **Clutch(X)** - 4
 - **Potentiometer** - A0
+
+##CMD commands
+- **pip install pyserial**
+- **pip install pyvjoy**
+- **pip install pydirectinput**
