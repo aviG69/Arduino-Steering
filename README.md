@@ -16,9 +16,9 @@ A custom steering wheel interface using Arduino and vJoy.
 Built for low-latency steering input in racing simulations.
 
 ## Connections 
-- **Accelerator(W)** - 2
-- **Brake(S)** - 3
-- **Clutch(X)** - 4
+- **Accelerator(W)** - 3
+- **Brake(S)** - 4
+- **Clutch(X)** - 5
 - **Potentiometer** - A0
 
 ## CMD commands
