@@ -1,27 +1,57 @@
-# Arduino-Steering
+# Arduino Steering Wheel Controller
 
-A custom steering wheel interface using Arduino and vJoy.
+**A low-latency custom steering wheel for racing simulators** built with Arduino and vJoy.
 
-## Components
-- **final_steering/**: Arduino source code (.ino)
-- **ArduinoSteering/**: Python bridge for data processing
-- **vJoySerialFeeder/**: Windows utility and required drivers
+![Project Photo](images/steering_wheel.jpg)
+*(Add a good photo or GIF here)*
 
-## Setup
-1. Upload the code in `final_steering/` to your Arduino.
-2. Install the vJoy drivers included in the repository.
-3. Use `vJoySerialFeeder.exe` to map the Arduino serial output to a virtual controller.
-4. Calibrate the axis in your simulation software.
+## Overview
 
-Built for low-latency steering input in racing simulations.
+This project turns a simple Arduino setup (potentiometer + buttons) into a fully functional USB steering wheel + pedals for games like **Assetto Corsa, iRacing, Dirt Rally, BeamNG**, etc.
 
-## Connections 
-- **Accelerator(W)** - 3
-- **Brake(S)** - 4
-- **Clutch(X)** - 5
-- **Potentiometer** - A0
+It features:
+- Smooth analog steering with noise filtering
+- Digital pedal inputs (Accelerator, Brake, Clutch)
+- High update rate for responsive feel
+- Python bridge for data processing and vJoy integration
 
-## CMD commands
-- **pip install pyserial**
-- **pip install pyvjoy**
-- **pip install pydirectinput**
+## Features
+
+- Real-time steering input via potentiometer
+- EMA (Exponential Moving Average) filtering for smooth control
+- Keyboard fallback support
+- Easy calibration in simulation software
+- Low-latency serial communication
+
+## Tech Stack
+
+- **Microcontroller**: Arduino Uno / Nano
+- **Firmware**: C++ (Arduino)
+- **Bridge**: Python (pyserial + pyvjoy + pydirectinput)
+- **Virtual Joystick**: vJoy
+
+## Hardware Connections
+
+| Component          | Pin     |
+|--------------------|---------|
+| Potentiometer (Steering) | A0   |
+| Accelerator (W)    | Pin 3   |
+| Brake (S)          | Pin 4   |
+| Clutch (X)         | Pin 5   |
+
+**Full wiring diagram and BOM coming soon** (add them!)
+
+## Setup Instructions
+
+### 1. Arduino Firmware
+1. Open `final_steering/final_steering.ino` (better to rename to `steering_controller.ino`)
+2. Upload to your Arduino
+
+### 2. Software Setup (Windows)
+
+```bash
+# Recommended: Create a virtual environment first
+python -m venv venv
+venv\Scripts\activate
+
+pip install -r requirements.txt
