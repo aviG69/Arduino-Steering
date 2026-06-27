@@ -64,3 +64,12 @@ This gives a very immersive, real-car-like ignition experience.
 - `images/` → Photos and demos
 - `docs/` → Extra documentation
 - `archive/`→ Old code and firmware
+
+## Port Configuration
+
+The Python script defaults to `COM5`. If your Arduino is connected to a different port:
+
+1. Open `arduino_to_vjoy.py`
+2. Change this line:
+   ```python
+   SERIAL_PORT = "COM5"
