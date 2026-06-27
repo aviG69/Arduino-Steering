@@ -6,16 +6,26 @@
 
 ## Overview
 
-This project turns a simple Arduino setup into a fully functional USB steering wheel + pedals with a **real ignition key switch**. Perfect for games like **Assetto Corsa, iRacing, BeamNG, MyWinterCar**, etc.
+This project turns a simple Arduino setup into a fully functional USB steering wheel + pedals with a **realistic ignition key switch**. Perfect for games like **Assetto Corsa, iRacing, BeamNG, MyWinterCar**, etc.
 
 ## Features
 
 - Smooth analog steering with EMA filtering
 - Digital pedals (Accelerator, Brake, Clutch)
 - **Realistic Ignition Switch** (UNO MINDA 7606) with physical key
-  - Simulates `Y` (Engine On) and `G` (Engine Off) keys
 - Low-latency serial communication
-- Easy-to-use launcher (`run.bat`)
+- Easy launcher (`run.bat`)
+
+## Ignition Switch Behavior
+
+The ignition key works as follows:
+
+- **Position 1 → Position 2**: Presses `Y` once (turns on electronics / accessories)
+- **Position 2 → Position 3** (Crank, spring-loaded): Holds `G` (starter)
+- **Back to Position 2**: No additional key press
+- **Position 2 → Position 1**: Presses `Y` again (shuts down the car)
+
+This gives a very immersive, real-car-like ignition experience.
 
 ## Tech Stack
 
@@ -36,21 +46,21 @@ This project turns a simple Arduino setup into a fully functional USB steering w
 | Accelerator (W)             | D3          | |
 | Brake (S)                   | D4          | |
 | Clutch (X)                  | D5          | |
-| Ignition Switch             | D6, D7      | Key-operated |
+| Ignition Switch             | D6, D7      | Multi-position key switch |
 
-**Bill of Materials**: [See BOM](hardware/BOM.md)
-
-## Easy Setup (Recommended)
+## Easy Setup
 
 1. Copy the entire **`ArduinoSteering`** folder to your **Desktop**.
 2. Double-click **`run.bat`** inside that folder.
 3. Connect your Arduino and calibrate in your simulator.
 
-> **Note**: Keep the Command Prompt window open while using the wheel.
+> **Important**: Keep the Command Prompt window open while using the wheel.
 
-### Manual Setup (Alternative)
+## Repository Structure
 
-```bash
-cd ArduinoSteering
-pip install -r requirements.txt
-python arduino_to_vjoy.py
+- `ArduinoSteering/` → Folder to copy to Desktop (run from here)
+- `firmware/` → Arduino code
+- `hardware/` → Schematic + documentation
+- `images/` → Photos and demos
+- `docs/` → Extra documentation
+- `archive/`→ Old code and firmware
