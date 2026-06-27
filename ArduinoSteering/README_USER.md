@@ -1,11 +1,3 @@
-
----
-
-### 2. `README_USER.md` (Inside `ArduinoSteering` Folder)
-
-Create a new file called **`README_USER.md`** inside the `ArduinoSteering` folder with this content:
-
-```markdown
 # Arduino Steering Wheel - User Guide
 
 ## Quick Start
